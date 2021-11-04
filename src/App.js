@@ -40,11 +40,19 @@ class App extends React.Component {
     return (
       <main>
         <p>React State Lab</p>
+        {this.state.currentScore <100 &&(
+        <>
         <h2>Current Score: {currentScore}</h2>
         <button  onClick={this.increaseScore}>+{addedScore}</button>
         <button  onClick={this.increaseAddedScore}>Pay 10 points to change from +{addedScore} to +{addedScore +1}</button>
-        <h2>You Win!</h2>
-        <button onClick={this.restart}>Play again?</button>
+        </>
+        )}
+        {this.state.currentScore >=100 &&( 
+          <>
+          <h2>You Win!</h2>
+          <button onClick={this.restart}>Play again?</button>
+          </>
+          )}
       </main>
     );
   }
