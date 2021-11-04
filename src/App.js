@@ -45,9 +45,14 @@ class App extends React.Component {
       <main>
         {this.state.currentScore < 100 && (
           <div>
-            <h1>Current Score: {this.state.currentScore}</h1>
-            <h3>Actions taken: {this.state.actions}</h3>
-            <button onClick={this.xClick}>+{this.state.x}</button>
+            <div class="container">
+              <h1>Current Score: {this.state.currentScore}</h1>
+              <h3>Actions taken: {this.state.actions}</h3>
+              <p>Try to get exactly 100</p>
+            </div>
+            <button onClick={this.xClick} class="increment">
+              +{this.state.x}
+            </button>
             <p></p>
             <button onClick={this.xIncrease}>
               Pay 10 points to change from +{this.state.x} to +
@@ -55,9 +60,18 @@ class App extends React.Component {
             </button>
           </div>
         )}
-        {this.state.currentScore >= 100 && (
-          <div>
+        {this.state.currentScore === 100 && (
+          <div class="end">
             <h2>You Win!</h2>
+            <h2>Nice</h2>
+            <h3>Actions taken: {this.state.actions}</h3>
+            <button onClick={this.playAgain}>Play again?</button>
+          </div>
+        )}
+        {this.state.currentScore > 100 && (
+          <div class="end">
+            <h2>You Win!</h2>
+            <h2>Not exactly 100 but got here</h2>
             <h3>Actions taken: {this.state.actions}</h3>
             <button onClick={this.playAgain}>Play again?</button>
           </div>

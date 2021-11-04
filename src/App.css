@@ -2,4 +2,21 @@
 main {
   margin: 25px auto;
   width: 50%;
+  text-align: center;
+}
+
+.container {
+  border: 1px solid black;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+button {
+  height: 30px;
+}
+.increment {
+  width: 100px;
+}
+
+.end {
+  border: 1px solid black;
 }
