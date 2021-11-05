@@ -1,6 +1,5 @@
 import React from "react";
 import LevelUp from "./LevelUp";
-import ErrorMsg from "./ErrorMsg";
 
 class CurrentScore extends React.Component {
   constructor() {
@@ -14,39 +13,52 @@ class CurrentScore extends React.Component {
   //event handler
   handleIncrement = () => {
     this.setState({
-      currentScore: this.state.currentScore + 1});
+      currentScore: this.state.currentScore + this.state.clicks});
   };
 
   //event handler
   handlePayment = () => {
+    const { currentScore, clicks } = this.state;
     //minus 10 from currentScore and increment button by 1
-    this.setState({ currentScore: this.state.currentScore - 10 });
-    this.setState({ clicks: this.state.clicks + 1 });
-  };
+    if (currentScore >= 10) {
+      this.setState({
+          currentScore: currentScore - 10,
+          clicks: clicks + 1
+      });
+    } else {
+      alert("You can't afford that!")
+    }
+  }
+
+  //event handler
+  resetGame = () => {
+    this.setState({
+      currentScore: 0,
+      clicks: 1
+    })
+  }
+
 
   render() {
     //destructuring state
-    let { currentScore } = this.state;
-    return (
-      <>
-        <h1>Current Score: {currentScore}</h1>
-        {currentScore < 0 
-          ? <ErrorMsg />
-          : <LevelUp score={currentScore} handleIncrement={this.handleIncrement} handlePayment={this.handlePayment}/>
-        }
+    let { currentScore , clicks } = this.state;
 
-        {/* ******************************************** */}
-        {/* Uses the ternary conditional to decide which component to render */}
-        {/* {currentBalance < 0
-            ? <Overdraft balance={currentBalance} handleDeposit={this.handleDeposit}/>
-            : <ATM handleDeposit={this.handleDeposit} handleWithdrawal={this.handleWithdrawal} />
-        } */}
-
-        {/* *********************************************** */}
-        {/* Will render ATM or Overdraft depending on the conditional handled in our render function above   */}
-        {/* {atmOrOverdraft} */}
-      </>
-    );
+    if(currentScore < 100) {
+      return (
+        <main>
+          <h1 className="title">Current Score:<span className="current-score"> {currentScore}</span></h1>
+          <LevelUp score={currentScore} handleIncrement={this.handleIncrement} handlePayment={this.handlePayment} click={clicks}/>
+        </main>
+      )
+    } else {
+      return (
+        <main>
+          <h2>You Win!</h2>
+          <button onClick={this.resetGame}>Play Again?</button>
+        </main>
+      )
+    }
+    
   }
 }
 
