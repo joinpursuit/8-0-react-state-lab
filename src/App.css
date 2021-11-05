@@ -1,5 +1,15 @@
 /* Your code here! */
 main {
-  margin: 25px auto;
-  width: 50%;
+	margin: 50px auto;
+	width: 50%;
+}
+
+div {
+	font-size: 60px;
+	font-family: "Courier New", Courier, monospace;
+}
+
+button {
+	text-align: center;
+	font-size: 30px;
 }
