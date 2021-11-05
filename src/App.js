@@ -42,7 +42,7 @@ class App extends React.Component {
 
   render() {
     console.log(this.state.currentScore);
-    if (this.state.currentScore < 10) {
+    if (this.state.currentScore < 100) {
       return (
         <main>
           <h1 id="currentScore">Current Score: {this.state.currentScore}</h1>
@@ -53,8 +53,7 @@ class App extends React.Component {
           </div>
           <div>
             <button id="pay-button" onClick={this.increaseAddPoints}>
-              Pay 10 points to change from +{this.state.addPoints} to +{" "}
-              {this.state.addPoints + 1}
+              Pay 10 points to change from +{this.state.addPoints} to +{this.state.addPoints + 1}
             </button>
           </div>
           <div></div>
