@@ -3,3 +3,12 @@ main {
   margin: 25px auto;
   width: 50%;
 }
+
+* {
+  text-align: center;
+}
+
+.display button {
+  display: inline-block;
+  margin: 15px;
+}
