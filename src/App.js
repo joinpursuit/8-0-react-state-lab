@@ -31,7 +31,6 @@ class App extends React.Component {
   }
 
   handleReset = () => {
-    const {count, pointNum} = this.state;
     this.setState({
       count:0,
       pointNum: 1,
@@ -43,7 +42,7 @@ class App extends React.Component {
     if(count < 100){
       return (
         <main>
-          <h1 className='title'> Current Score: <span className='currentScore'> {count}</span></h1>
+          <h1 className='title'>Current Score:<span className='currentScore'> {count}</span></h1>
           <button onClick={this.pointUp}> +{pointNum} </button>
           <button onClick={this.increaseCount}>Pay 10 points to change from +{pointNum} to +{pointNum+1}</button>
         </main>
