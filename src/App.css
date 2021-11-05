@@ -16,6 +16,9 @@ button {
 button {
   background-color: white;
 }
-change-border {
-  border: 2 solid blue;
+.blue {
+  border: 2px solid lightskyblue;
+}
+.black {
+  border: 2px solid black;
 }
