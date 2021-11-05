@@ -7,20 +7,13 @@ class App extends React.Component {
     this.state = {
       current: 0,
       plus: 1,
-      complete: false,
     };
   }
 
   addHandle = () => {
-    if (this.state.current < 100) {
-      this.setState({
-        current: this.state.current + this.state.plus,
-      });
-    } else if (this.state.current >= 100) {
-      this.setState({
-        complete: true,
-      });
-    }
+    this.setState({
+      current: this.state.current + this.state.plus,
+    });
   };
 
   bonusHandle = () => {
@@ -38,14 +31,13 @@ class App extends React.Component {
     this.setState({
       current: 0,
       plus: 1,
-      complete: false,
     });
   };
 
   render() {
     const { current, plus, complete } = this.state;
 
-    if (complete || current >= 100) {
+    if (current >= 100) {
       return (
         <main>
           {/* <h2>Current Score: {current}</h2> */}
