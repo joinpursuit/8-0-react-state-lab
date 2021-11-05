@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import GamePlay from "./Components/GamePlay";
+import WinResult from "./Components/WinResult";
 
 class App extends React.Component {
   constructor() {
@@ -40,21 +42,21 @@ class App extends React.Component {
   
   render() {
     const { currentScore, increment, payPoints } = this.state;
-    const gamePlay = 
-      <div className="gamePlay">
-        <h1>Current Score: { currentScore }</h1>
-        <button onClick={this.incrementClick}> +{ increment }</button>
-        <button onClick={this.payClick}>Pay 10 points to change from +{increment } to +{ payPoints }</button>
-      </div>
-    const winResult = 
-      <div className="winResult">
-        <h2>You Win!</h2>
-        <button onClick={this.replayClick}>Play again?</button>
-      </div>
+    // const other = 
+    //   <div className="gamePlay">
+    //     <h1>Current Score: { currentScore }</h1>
+    //     <button onClick={this.incrementClick}> +{ increment }</button>
+    //     <button onClick={this.payClick}>Pay 10 points to change from +{increment } to +{ payPoints }</button>
+    //   </div>
+    // const winResult = 
+    //   <div className="winResult">
+    //     <h2>You Win!</h2>
+    //     <button onClick={this.replayClick}>Play again?</button>
+    //   </div>
   
     return (
-      <div>
-        {currentScore >= 100 ? winResult : gamePlay }
+      <div className="container">
+        {currentScore >= 100 ? <WinResult replayClick={this.replayClick}/> : <GamePlay currentScore={currentScore} increment={increment} payPoints={payPoints} incrementClick={this.incrementClick} payClick={this.payClick} /> }
       </div>
     );
   }
