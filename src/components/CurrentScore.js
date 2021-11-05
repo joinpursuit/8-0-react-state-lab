@@ -1,12 +1,13 @@
 import React from "react";
 import LevelUp from "./LevelUp";
+import ErrorMsg from "./ErrorMsg";
 
-export default class CurrentScore extends React.Component {
+class CurrentScore extends React.Component {
   constructor() {
     super();
     this.state = {
       currentScore: 0,
-      clicks: 0,
+      clicks: 1,
     };
   }
 
@@ -26,19 +27,13 @@ export default class CurrentScore extends React.Component {
   render() {
     //destructuring state
     let { currentScore } = this.state;
-
-    // created a variable to reassign the correct component that should render depending on our current balance
-    //   let atmOrOverdraft = <ATM handleDeposit={this.handleDeposit} handleWithdrawal={this.handleWithdrawal} />
-
-    //   if(currentBalance <0){
-    //       atmOrOverdraft =  <Overdraft balance={currentBalance} handleDeposit={this.handleDeposit}/>
-    //   }
-
     return (
       <>
         <h1>Current Score: {currentScore}</h1>
-        {currentScore < 0 &&
-        (<LevelUp score={currentScore} handleIncrement={this.handleIncrement} handlePayment={this.handlePayment}/>)}
+        {currentScore < 0 
+          ? <ErrorMsg />
+          : <LevelUp score={currentScore} handleIncrement={this.handleIncrement} handlePayment={this.handlePayment}/>
+        }
 
         {/* ******************************************** */}
         {/* Uses the ternary conditional to decide which component to render */}
@@ -54,3 +49,5 @@ export default class CurrentScore extends React.Component {
     );
   }
 }
+
+export default CurrentScore;
