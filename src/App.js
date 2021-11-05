@@ -44,7 +44,7 @@ class App extends React.Component {
 	render() {
 		const { counter, addScore, firstAdd, secondAdd } = this.state;
 
-		if (counter >= 100) {
+		if (counter > 100) {
 			return (
 				<div>
 					<div>
@@ -57,7 +57,9 @@ class App extends React.Component {
 		} else {
 			return (
 				<main>
-					<div>Current Score:{counter}</div>
+					<div>
+						<b>Current Score: {counter}</b>
+					</div>
 					<button onClick={this.increaseAmount}>+{addScore} </button>
 					<button onClick={this.pointBoost}>
 						Pay 10 points to change from +{firstAdd} to +{secondAdd}
