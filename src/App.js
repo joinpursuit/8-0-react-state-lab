@@ -37,11 +37,12 @@ class App extends React.Component {
   render() {
     const {score, incrementCount} = this.state;
     return ( 
-      this.state.score >= 100 ? <div>
+      this.state.score >= 100 ? <main>
+        {/* <h1>Current Score: {score}</h1> */}
         <h2>You Win!</h2>
         <button onClick={this.reset}>Play again?</button>
-      {console.log(this.state)};
-      </div> :
+      {/* {console.log(this.state)}; */}
+      </main> :
       <main>
         <h1>Current Score: {score}</h1>
         <button onClick={this.currentScore}>
