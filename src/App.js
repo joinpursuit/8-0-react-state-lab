@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
+import CurrentScore from "./components/CurrentScore";
 
 class App extends React.Component {
   render() {
     return (
       <main>
-        <p>React State Lab</p>
+        <CurrentScore />
       </main>
     );
   }
