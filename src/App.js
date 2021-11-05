@@ -14,8 +14,9 @@ class App extends React.Component {
 	}
 
 	increaseAmount = () => {
+		const { counter, addScore } = this.state;
 		this.setState({
-			counter: this.state.counter + this.state.addScore,
+			counter: counter + addScore,
 		});
 	};
 	pointBoost = () => {
@@ -37,29 +38,24 @@ class App extends React.Component {
 			addScore: 1,
 			firstCount: 10,
 			firstAdd: 1,
-			secondAdd: 1,
+			secondAdd: 2,
 		});
 	};
 
 	render() {
 		const { counter, addScore, firstAdd, secondAdd } = this.state;
 
-		if (counter > 100) {
+		if (counter >= 100) {
 			return (
-				<div>
-					<div>
-						<b>Current Score:{counter}</b>
-					</div>
+				<main>
 					<h2>You Win!</h2>
 					<button onClick={this.refresh}>Play again?</button>
-				</div>
+				</main>
 			);
 		} else {
 			return (
 				<main>
-					<div>
-						<b>Current Score: {counter}</b>
-					</div>
+					<div>Current Score: {counter}</div>
 					<button onClick={this.increaseAmount}>+{addScore} </button>
 					<button onClick={this.pointBoost}>
 						Pay 10 points to change from +{firstAdd} to +{secondAdd}
