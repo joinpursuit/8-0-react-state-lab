@@ -2,4 +2,14 @@
 main {
   margin: 25px auto;
   width: 50%;
+  text-align: center;
+}
+
+main p {
+  font-weight: bolder;
+}
+
+button {
+  font-size: larger;
+  margin: 10px;
 }
