@@ -1,8 +1,6 @@
 import React from "react";
 import "./App.css";
 
-// state should be here only, try and get it outta current and put it here
-
 class App extends React.Component {
   constructor() {
     super();
@@ -12,16 +10,14 @@ class App extends React.Component {
     };
   }
 
-  //event handler
-  //this is your current score
   increase = () => {
     this.setState({
       currentScore: (this.state.currentScore +=
-        this.state.incrementor) /**how much the button has is what it's increased by. */,
+        this.state.incrementor)
     });
   };
 
-  decreasePoints = () => {
+  decrease = () => {
     if (this.state.currentScore < 10) {
       alert("You can't afford that!");
     } else {
@@ -42,28 +38,23 @@ class App extends React.Component {
     const active =
       currentScore < 100 ? (
         <>
-          <div>Current Score: {currentScore}</div>
-          <button onClick={this.increase}>+{incrementor}</button>
-          <button onClick={this.decreasePoints}>
-            {" "}
-            Pay 10 points to change from +{incrementor} to +{incrementor + 1}
-          </button>
+          <h1>Current Score: {currentScore}</h1>
+          <div className='buttons'>
+            <button onClick={this.increase}>+{incrementor}</button>
+            <button onClick={this.decrease}>Pay 10 points to change from +{incrementor} to +{incrementor + 1}</button>
+          </div>
         </>
       ) : (
         <>
-          <h2>You Win!</h2>
-          <button onClick={this.youWin}>Play again?</button>
+          <h1>You Win!</h1>
+          <div className="play">
+            <button onClick={this.youWin}>Play again?</button>
+          </div>
         </>
       );
 
     return (
       <main>{active}</main>
-      /* 
-          -current score: {} 
-          -button for click to add points by however many is on the button
-          -another button to pay 10 points to increase the first button to the next number (add an alert if you dont have enough points to pay the ten to increase)
-          - when you get to 101, you replace the two buttons with "You WIN!" and a "play again?" button that resets the game 
-        */
     );
   }
 }
