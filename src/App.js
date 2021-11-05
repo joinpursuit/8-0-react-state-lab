@@ -28,7 +28,7 @@ class App extends React.Component {
         addPoints: addPoints + 1,
       });
     } else {
-      alert(`You can't afford that.`);
+      alert(`You can't afford that!`);
     }
   };
 
@@ -41,14 +41,12 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.currentScore);
     if (this.state.currentScore < 100) {
       return (
         <main>
           <h1 id="currentScore">Current Score: {this.state.currentScore}</h1>
           <div>
-            <button id="plus-button" onClick={this.increaseScore}>
-              +{this.state.addPoints}
+            <button id="plus-button" onClick={this.increaseScore}>+{this.state.addPoints}
             </button>
           </div>
           <div>
@@ -62,8 +60,8 @@ class App extends React.Component {
     } else {
       return (
         <main>
-          <h2> You Win !</h2>
-          <button onClick={this.handleReset}>Play again</button>
+          <h2>You Win!</h2>
+          <button onClick={this.handleReset}>Play again?</button>
         
         </main>
       );
