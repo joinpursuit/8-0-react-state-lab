@@ -3,3 +3,8 @@ main {
   margin: 25px auto;
   width: 50%;
 }
+
+div {
+  text-align: center;
+  margin: 20px;
+}
