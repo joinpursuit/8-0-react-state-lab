@@ -4,25 +4,29 @@ import LevelUp from "./LevelUp";
 class CurrentScore extends React.Component {
   constructor() {
     super();
-    this.state = {
+    this.state = { //information that's being stored
       currentScore: 0,
       clicks: 1,
     };
   }
 
   //event handler
-  handleIncrement = () => {
+  handleIncrement = () => { //creating a method called handleIncrement 
     this.setState({
       currentScore: this.state.currentScore + this.state.clicks});
+      //currentScore = this.state.var name
   };
+
+
+
 
   //event handler
   handlePayment = () => {
-    const { currentScore, clicks } = this.state;
-    //minus 10 from currentScore and increment button by 1
+    const { currentScore, clicks } = this.state; //destructuring 
     if (currentScore >= 10) {
       this.setState({
-          currentScore: currentScore - 10,
+        currentScore: currentScore - 10,
+        //minus 10 from currentScore and increment button by 1
           clicks: clicks + 1
       });
     } else {
@@ -31,7 +35,7 @@ class CurrentScore extends React.Component {
   }
 
   //event handler
-  resetGame = () => {
+  resetGame = () => { //another method to reset game
     this.setState({
       currentScore: 0,
       clicks: 1
@@ -45,20 +49,20 @@ class CurrentScore extends React.Component {
 
     if(currentScore < 100) {
       return (
-        <main>
+        <>
           <h1 className="title">Current Score:<span className="current-score"> {currentScore}</span></h1>
-          <LevelUp score={currentScore} handleIncrement={this.handleIncrement} handlePayment={this.handlePayment} click={clicks}/>
-        </main>
+          <LevelUp score={currentScore} handleIncrement={this.handleIncrement} handlePayment={this.handlePayment} clicks={clicks}/>
+        </>
       )
     } else {
       return (
-        <main>
+        <>
           <h2>You Win!</h2>
-          <button onClick={this.resetGame}>Play Again?</button>
-        </main>
+          <button onClick={this.resetGame}> Play again? </button>  
+        </>
       )
     }
-    
+    //reset button
   }
 }
 

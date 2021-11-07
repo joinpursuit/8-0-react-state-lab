@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import CurrentScore from "./components/CurrentScore";
+import CurrentScore from "./Components/CurrentScore";
 
 class App extends React.Component {
   render() {
