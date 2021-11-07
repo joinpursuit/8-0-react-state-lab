@@ -45,17 +45,17 @@ class CurrentScore extends React.Component {
 
     if(currentScore < 100) {
       return (
-        <main>
-          <h1 className="title">Current Score:<span className="current-score"> {currentScore}</span></h1>
-          <LevelUp score={currentScore} handleIncrement={this.handleIncrement} handlePayment={this.handlePayment} click={clicks}/>
-        </main>
+        <>
+          <h1>Current Score: {currentScore} </h1>
+          <LevelUp score={currentScore} handleIncrement={this.handleIncrement} handlePayment={this.handlePayment} clicks={clicks}/>
+        </>
       )
     } else {
       return (
-        <main>
+        <>
           <h2>You Win!</h2>
-          <button onClick={this.resetGame}>Play Again?</button>
-        </main>
+          <button onClick={this.resetGame}> Play again? </button>
+        </>
       )
     }
     
