@@ -9,14 +9,14 @@ class App extends React.Component {
       currentScore: 0,
       incrementor: 1,
     };
-  }
+  };
 
   increaseScore = () => {
     const {currentScore, incrementor} = this.state;
     this.setState({
       currentScore: currentScore + incrementor
-    })
-  }
+    });
+  };
 
   levelUp = () => {
     let {currentScore, incrementor} = this.state;
@@ -26,9 +26,15 @@ class App extends React.Component {
       this.setState({
         currentScore: currentScore - 10,
         incrementor: incrementor + 1
-      })
-    }
-    
+      });
+    };
+  };
+
+  handleReset = () => {
+    this.setState({
+      currentScore: 0,
+      incrementor: 1
+    });
   };
 
 
@@ -50,7 +56,7 @@ class App extends React.Component {
         <main>
           <h1>Current Score: {currentScore}</h1>
           <h2>You Win!</h2>
-          <button onClick={}>Play again?</button>
+          <button onClick={this.handleReset}>Play again?</button>
         </main>
       );
     };
