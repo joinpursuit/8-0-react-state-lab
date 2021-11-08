@@ -54,7 +54,7 @@ class App extends React.Component {
     } else {
       return (
         <main>
-          <h1>Current Score: {currentScore}</h1>
+          <h1>{currentScore}</h1>
           <h2>You Win!</h2>
           <button onClick={this.handleReset}>Play again?</button>
         </main>
