@@ -54,7 +54,6 @@ class App extends React.Component {
     } else {
        return (
         <main>
-          <p>Current Score: {number}</p>
           <h2>You Win!</h2>
           <button onClick={this.reset}>Play again?</button>
         </main>
