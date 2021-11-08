@@ -7,51 +7,60 @@ class App extends React.Component {
 
     this.state = {
       count: 0,
-      one: 1,
+      incrementor: 1,
     }
   }
 
-  addOne = () => {
-    const { count, one } = this.state
-
-    this.setState({
-      count: count + 1
-    })
-  }
-
+  
   increaseCount = () => {
-    const { count, one } = this.state
-
+    const { count, incrementor } = this.state
+    
     if(count >= 10) {
       this.setState ({
         count: count - 10,
-        one: one + 1,
+        incrementor: incrementor + 1,
       })
     } else {
       window.alert("You can't afford that!")
     }
   }
+  
+  addOne = () => {
+    const { count, incrementor } = this.state
 
-  // resetCount = () => {
-  //   this.setState ({
-  //     count: 0,
-  //   })
-  // }
+    this.setState({
+      count: count + incrementor
+    })
+  }
+  
+  resetCount = () => {
+    this.setState ({
+      count: 0,
+      incrementor: 1,
+    })
+  }
   
   render() {
-    const { count, one } = this.state
+    const { count, incrementor} = this.state
 
+    if (count < 100) {
+        return (
+        <main>
+          <h2>Current Score: {count}</h2>
+          <button type="submit" onClick={this.addOne} style={count >= 100 ? {display:"none"} : null }> +{incrementor} </button>
+          <br /><br />
+          <button type="submit" onClick={this.increaseCount} style={count >= 100 ? {display: "none"} : null}>Pay 10 points to change from +{incrementor} to +{incrementor + 1}</button>
+        </main>
+        )
+    }
+   else {
     return (
       <main>
-        <h2>Current Score: {count}</h2>
-          <div>
-            <button type="submit" onClick={this.addOne}> +{one} </button>
-          </div>
-          <div>
-            <button type="submit" onClick={this.increaseCount}>Pay 10 points to change from +{one} to +{one + 1}</button>
-          </div>
+        <h2>You Win!</h2>
+        <button onClick={this.resetCount}>Play again?</button>
       </main>
-    );
+    )
+   }
   }
 }
 
