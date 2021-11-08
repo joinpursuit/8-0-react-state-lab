@@ -32,10 +32,10 @@ class App extends React.Component {
   }
 
   reset = () => {
-    this.setState = {
+    this.setState ({
       number: 0,
       plusNumber: 1,
-    }
+    })
   }
 
   render() {
@@ -45,13 +45,16 @@ class App extends React.Component {
       return (  
         <main>
           <p>Current Score: {number}</p>
-            <button onClick={this.addNumber}>+{plusNumber}</button>{" "}
+            <button onClick={this.addNumber}>+{plusNumber}</button>
+            <br />
+            <br />
             <button onClick={this.permission}>Pay 10 points to change from +{plusNumber} to +{plusNumber+1}</button>
         </main> 
       ) 
     } else {
        return (
         <main>
+          <p>Current Score: {number}</p>
           <h2>You Win!</h2>
           <button onClick={this.reset}>Play again?</button>
         </main>
