@@ -1,5 +1,28 @@
 /* Your code here! */
+:root {
+  --main-bg-color: rgb(178, 182, 184);
+  --border-color: var(--color-a);
+  --border-color: var(--color-b);
+  --border-color: var(--color-c);
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
+
 main {
   margin: 25px auto;
   width: 50%;
+}
+
+
+
+.app-main{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+.current{
+  /* color: black; */
 }
