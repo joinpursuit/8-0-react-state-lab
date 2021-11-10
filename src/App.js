@@ -33,6 +33,14 @@ class App extends React.Component {
     }
   }
 
+  replayClick = () => {
+    this.setState({
+      currentScore: 0, 
+      increment: 1, 
+      payPoints: 2
+    })
+  }
+
   render() {
     const {currentScore, increment, payPoints} = this.state;
     const gamePlay = 
@@ -42,9 +50,15 @@ class App extends React.Component {
         <button onClick={this.payClick}>Pay 10 points to change from +{increment} to +{payPoints}</button>
       </div>
 
+    const winResult = 
+      <div>
+        <h2>You Win!</h2>
+        <button onClick={this.replayClick}>Play again?</button>
+      </div> 
+
     return (
       <div >
-        {gamePlay}
+        {currentScore >= 100 ? winResult : gamePlay}
       </div>
     );
   }
