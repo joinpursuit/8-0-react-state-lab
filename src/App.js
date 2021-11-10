@@ -2,11 +2,20 @@ import React from "react";
 import "./App.css";
 
 class App extends React.Component {
+  constructor () {
+    super();
+    this.state = {
+      currentScore: 0,
+    }
+  }
+
   render() {
+    const {currentScore} = this.state;
+    
     return (
-      <main>
-        <p>React State Lab</p>
-      </main>
+      <div className="gamePlay">
+        <h1 className>Current Score: {currentScore}</h1>
+      </div>
     );
   }
 }
