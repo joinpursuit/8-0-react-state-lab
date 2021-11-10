@@ -6,15 +6,29 @@ class App extends React.Component {
     super();
     this.state = {
       currentScore: 0,
+      increment: 1,
     }
   }
 
+  incrementClick = () => {
+    const {currentScore, increment} = this.state
+
+    this.setState({
+      currentScore: currentScore + increment
+    })
+  }
+
   render() {
-    const {currentScore} = this.state;
-    
-    return (
+    const {currentScore, increment} = this.state;
+    const gamePlay = 
       <div className="gamePlay">
         <h1 className>Current Score: {currentScore}</h1>
+        <button onClick={this.incrementClick}>+{increment}</button>
+      </div>
+
+    return (
+      <div >
+        {gamePlay}
       </div>
     );
   }
