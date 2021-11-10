@@ -7,6 +7,7 @@ class App extends React.Component {
     this.state = {
       currentScore: 0,
       increment: 1,
+      payPoints: 2
     }
   }
 
@@ -18,12 +19,27 @@ class App extends React.Component {
     })
   }
 
+  payClick = () => {
+    const {currentScore, increment, payPoints} = this.state
+
+    if (currentScore < 10) {
+      alert("You can't afford that!")
+    } else {
+      this.setState({
+        currentScore: currentScore - 10,
+        increment: payPoints,
+        payPoints: payPoints + 1
+      })
+    }
+  }
+
   render() {
-    const {currentScore, increment} = this.state;
+    const {currentScore, increment, payPoints} = this.state;
     const gamePlay = 
       <div className="gamePlay">
         <h1 className>Current Score: {currentScore}</h1>
         <button onClick={this.incrementClick}>+{increment}</button>
+        <button onClick={this.payClick}>Pay 10 points to change from +{increment} to +{payPoints}</button>
       </div>
 
     return (
