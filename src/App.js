@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 
 class App extends React.Component {
-
     constructor(props) {
         super(props)
         this.state = {
@@ -10,13 +9,11 @@ class App extends React.Component {
             incrementBy: 1
         }
     }
-
     handleIncrementScore = (event) => {
         this.setState({
             currentScore: this.state.currentScore + this.state.incrementBy
         })
     }
-
     handleIncrementIncrement = (event) => {
         this.state.currentScore >= 10 
             ? this.setState({
@@ -25,14 +22,12 @@ class App extends React.Component {
             })
             : alert("You can't afford that!");            
     }
-
     handleRestartGame = () => {
         this.setState({
             currentScore: 0,
             incrementBy: 1
         })
     }
-
     render() {
         const { currentScore, incrementBy } = this.state;
         return (
@@ -45,8 +40,6 @@ class App extends React.Component {
                     : <div>
                         <h1>Current Score: {currentScore}</h1>
                         <button onClick={this.handleIncrementScore}>+{incrementBy}</button>
-                        <br/>
-                        <br/>
                         <button onClick={this.handleIncrementIncrement}>Pay 10 points to change from +{incrementBy} to +{incrementBy + 1}</button>
                     </div>
                 }
@@ -54,6 +47,12 @@ class App extends React.Component {
         )
     }
 }
+
+export default App;
+
+
+
+
 
 // class App extends React.Component {
 //   constructor() {
@@ -119,5 +118,3 @@ class App extends React.Component {
 //     }
 //   }
 // }
-
-export default App;
