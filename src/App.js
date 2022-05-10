@@ -1,46 +1,6 @@
 import React from "react";
 import "./App.css";
 
-/*class App extends React.Component {
-  constructor(){
-  super();
-  this.state = {
-    count: 0,
-    increment: 1
-  }
-}
-  handleClick = () => {
-
-  this.setState({
-    count: ++this.state.count,
-    
-  })
-}
-
-handleClick2 = () => {
-
-  this.setState({
-    increment: ++this.state.increment
-  })
-}
-  render() {
-    const {count} = this.state;
-    const {increment} = this.state;
-    return (
-      <main>
-        <p>React State Lab</p>
-        <p>
-          <strong>Current Score:</strong> {count}
-        </p>
-        <button onClick={this.handleClick}>+
-        </button>
-        <br></br>
-        <button onClick={this.handleClick2} >Pay 10 points to change from +{increment} to +{increment+1}</button>
-      </main>
-    );
-  }
-}*/
-
 class App extends React.Component {
   constructor() {
     super();
