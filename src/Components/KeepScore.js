@@ -50,7 +50,6 @@ class KeepScore extends Component {
     const { score, plusX } = this.state;
 
     if (score < 100) {
-      console.log("under 100");
       return (
         <section className="currentScore-section">
           <header>Clicker Game</header>
@@ -64,7 +63,6 @@ class KeepScore extends Component {
         </section>
       );
     } else {
-      console.log("inside else");
       return (
         <section className="currentScore-section">
           <header>Clicker Game</header>
