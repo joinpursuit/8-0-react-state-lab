@@ -1,0 +1,15 @@
+.addToScoreButton {
+    border: 3px outset red;
+    background-color: lightBlue;
+    height: 75px;
+    width: 75px;
+    cursor: pointer;
+  }
+  .addToScoreButton:hover {
+    border: 3px inset green;
+    background-color: aliceblue;
+  }
+  
+  .wonGame {
+    display: none;
+  }
