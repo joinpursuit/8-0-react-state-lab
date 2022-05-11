@@ -40,6 +40,8 @@ class Counter extends Component {
         <>
           <h1>Current Score: {this.state.count}</h1>
           <button onClick={this.increment}>+{this.state.incrementor}</button>
+          <br></br>
+          <br></br>
           <button onClick={this.payButton}>
             Pay 10 points to change from +{this.state.incrementor} to +
             {this.state.incrementor + 1}
@@ -49,7 +51,7 @@ class Counter extends Component {
     } else {
       return (
         <div>
-          <h1>{this.state.count}!</h1>
+          <h1>Current Score: {this.state.count}</h1>
           <h2>You Win!</h2>
           <button onClick={this.playAgainButton}>Play again?</button>
         </div>
