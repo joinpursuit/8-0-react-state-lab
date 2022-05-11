@@ -37,15 +37,14 @@ class CurrentScore extends React.Component {
           <br />
           <br />
           <button onClick={this.decrement}>
-            Pay 10 points to change from +{this.state.add} to +
-            {this.state.add + 1}
+            Pay 10 points to change from +{this.state.add} to +{this.state.add + 1}
           </button>
         </div>
       )
     } else {
       return (
         <div>
-          <h2>Current Score: {this.state.count}</h2>
+          <h2>Score: {this.state.count}</h2>
           <h2>You Win!</h2>
           <button onClick={this.playbutton}>Play again?</button>
         </div>
@@ -55,5 +54,3 @@ class CurrentScore extends React.Component {
 }
 
 export default CurrentScore
-
-
