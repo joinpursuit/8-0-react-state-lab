@@ -1,14 +1,69 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
 
 class App extends React.Component {
-  render() {
-    return (
-      <main>
-        <p>React State Lab</p>
-      </main>
-    );
-  }
+	constructor() {
+		super();
+		this.state = {
+			score: 0,
+			plusX: 1,
+		};
+	}
+
+	addScore = () => {
+		this.setState({
+			score: this.state.score + this.state.plusX,
+		});
+	};
+
+	payUpFoolButton = () => {
+		if (this.state.score >= 10) {
+			this.setState({
+				score: this.state.score - 10,
+				plusX: this.state.plusX + 1,
+			});
+		} else {
+			alert("You can't afford that!");
+		}
+	};
+
+	playAgain = () => {
+		this.setState({
+			score: 0,
+			plusX: 1,
+		});
+	};
+	render() {
+		const { score, plusX } = this.state;
+		if (this.state.score < 100) {
+			return (
+				<>
+					<div>
+						<h1>Current Score: {this.state.score}</h1>
+					</div>
+
+					<div>
+						<button onClick={this.addScore}>+{this.state.plusX}</button>
+					</div>
+
+					<div>
+						<button onClick={this.payUpFoolButton}>
+							Pay 10 points to change from + {this.state.plusX} to +
+							{this.state.plusX + 1}
+						</button>
+					</div>
+				</>
+			);
+		} else {
+			return (
+				<div>
+					<h1>{this.state.score}!</h1>
+					<h2>You Win!</h2>
+					<button onClick={this.playAgain}>Play again?</button>
+				</div>
+			);
+		}
+	}
 }
 
 export default App;
