@@ -1,54 +1,37 @@
-import React from "react";
-import "./App.css";
+import React, {useState} from "react";
+import reactDom from "react-dom";
 
-class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      count: 0,
-      incrementor: 1,
+const App = () => {
+  const [count, setCount] = useState(0)
+  const [incrementor, setIncrementor] = useState(1)
+  const addPoints = () => {
+    setCount(count + incrementor) 
     };
-  }
-
-  addPoints = () => {
-    this.setState({
-      count: this.state.count + this.state.incrementor,
-    });
-  };
-
-  payBtn = () => {
-    if (this.state.count >= 10) {
-      this.setState({
-        count: this.state.count - 10,
-        incrementor: this.state.incrementor + 1,
-      });
+  const payBtn  = () => {
+    if (count < 10) {
+      alert("You can't afford that!")
     } else {
-      alert("You can't afford that!");
+      setCount(count - 10)
+      setIncrementor(incrementor + 1)
     }
   };
-
-  playAgainBtn = () => {
-    this.setState({
-      count: 0,
-      incrementor: 1,
-    });
+  const playAgainBtn = () => {
+   setCount(0)
+   setIncrementor(1)
   };
 
-  render() {
-    const { count, incrementor } = this.state;
-    if (this.state.count < 100) {
+    if (count < 100) {
       return (
         <>
           <div>
-            <h1>Current Score: {this.state.count}</h1>
+            <h1>Current Score: {count}</h1>
           </div>
           <div>
-            <button onClick={this.addPoints}>+{this.state.incrementor}</button>
+            <button onClick={()=>addPoints()}>+{incrementor}</button>
           </div>
           <div>
-            <button onClick={this.payBtn}>
-              Pay 10 points to change from +{this.state.incrementor} to +{this.state.incrementor + 1}
+            <button onClick={()=>payBtn()}>
+              Pay 10 points to change from +{incrementor} to +{incrementor + 1}
             </button>
           </div>
         </>
@@ -56,13 +39,11 @@ class App extends React.Component {
     } else {
       return (
         <div>
-            <h1>{this.state.count}!</h1>
+            <h1>{count}!</h1>
             <h2>You Win!</h2>
-            <button onClick={this.playAgainBtn}>Play again?</button>
+            <button onClick={()=>playAgainBtn()}>Play again?</button>
         </div>
       );
     }
-  }
 }
-
 export default App;
