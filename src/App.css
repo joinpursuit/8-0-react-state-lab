@@ -2,4 +2,17 @@
 main {
   margin: 25px auto;
   width: 50%;
+  text-align: center;
+}
+.bold {
+  font-weight:700;
+}
+.winHide {
+  display:none;
+}
+.button {
+  display: none;
+}
+.youWin {
+  display: block;
 }
