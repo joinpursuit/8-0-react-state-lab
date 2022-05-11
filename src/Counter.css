@@ -1,0 +1,16 @@
+.btn {
+  display: block;
+  margin: 1rem auto;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  background-color: rgb(184, 184, 221);
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+.display {
+  padding: 2rem 0;
+  margin: 1rem auto;
+  text-align: center;
+}
