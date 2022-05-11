@@ -1,14 +1,15 @@
-import React from "react";
-import "./App.css";
+import React from 'react'
+import './App.css'
+import CurrentScore from './Components/CurrentScore'
 
 class App extends React.Component {
   render() {
     return (
       <main>
-        <p>React State Lab</p>
+        <CurrentScore />
       </main>
-    );
+    )
   }
 }
 
-export default App;
+export default App
