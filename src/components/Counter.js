@@ -51,7 +51,7 @@ class Counter extends Component {
     } else {
       return (
         <div>
-          <h1>Current Score: {this.state.count}</h1>
+          <h1>{this.state.count}</h1>
           <h2>You Win!</h2>
           <button onClick={this.playAgainButton}>Play again?</button>
         </div>
