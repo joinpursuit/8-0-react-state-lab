@@ -1,66 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      countX: 1,
-      currentScore: 0,
-      payTen: 2,
-    };
+const App = () => {
+  let [currentScore, setcurrentScore] = useState(0)
+
+  const handleClickX = () => {
+    setcurrentScore(currentScore + 1)
   }
 
-  handleClickX = () => {
-    this.setState({
-      currentScore: ++this.state.currentScore,
-    });
-  };
-  handleClickPayTen = () => {
-    if (this.state.currentScore >= 10) {
-      this.setState({
-        countX: ++this.state.countX,
-        currentScore: this.state.currentScore - 10,
-      });
+  let [countX, setcountX] = useState(1)
+
+  const handleClickPayTen = () => {
+    if (currentScore >= 10) {
+      setcountX(countX + 1)
+      setcurrentScore(currentScore - 10)
     } else {
       alert("You can't afford that!");
     }
-  };
-  handleClickReset = () => {
-    this.setState({
-      currentScore: 0,
-      countX: 1,
-    });
-  };
-  render() {
-    const { currentScore } = this.state;
-    const { countX } = this.state;
-    let youWin = "button";
-    let winHide = "win-hide";
-    if (this.state.currentScore > 100) {
-      youWin += " youWin ";
-      winHide += " winHide ";
-    }
+  }
+  const handleClickReset = () => {
+    setcurrentScore(currentScore = 0)
+    setcountX(countX = 1)
+  }
+
+
+  if (currentScore > 100) {
     return (
       <main>
-        <p className="bold">Current Score: {currentScore}</p>
-        <div id="win-button" className={winHide}>
+        <h1>Current Score: {currentScore}</h1>
+        <div>
+          <h2>You Win!</h2>
+          <button onClick={handleClickReset}>Play again?</button>
+        </div>
+      </main>
+    )
+  } else {
+    return (
+      <main>
+        <h1>Current Score: {currentScore}</h1>
+        <div>
           <p>
-            <button onClick={this.handleClickX}> +{countX}</button>
+            <button onClick={handleClickX}> +{countX}</button>
           </p>
           <p>
-            <button onClick={this.handleClickPayTen}>
+            <button onClick={handleClickPayTen}>
               Pay 10 points to change from +{countX} to +{countX + 1}
             </button>
           </p>
         </div>
-        <div id="button" className={youWin}>
-          <h2>You Win!</h2>
-          <button onClick={this.handleClickReset}>Play again?</button>
-        </div>
       </main>
     );
   }
-}
+};
 
 export default App;
+
+// working with Jimmy - really good collab
