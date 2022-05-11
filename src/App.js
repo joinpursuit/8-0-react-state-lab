@@ -1,11 +1,12 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
+import Counter from './Counter.js';
 
 class App extends React.Component {
   render() {
     return (
-      <main>
-        <p>React State Lab</p>
+      <main className='main'>
+        <Counter />
       </main>
     );
   }
