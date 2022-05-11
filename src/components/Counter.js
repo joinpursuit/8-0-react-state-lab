@@ -27,7 +27,7 @@ class Counter extends Component {
     }
   };
 
-  playAgainBtn = () => {
+  playAgainButton = () => {
     this.setState({
       count: 0,
       incrementor: 1,
@@ -35,16 +35,26 @@ class Counter extends Component {
   };
 
   render() {
-    return (
-      <>
-        <h1>Current Score: {this.state.count}</h1>
-        <button onClick={this.increment}>+{this.state.incrementor}</button>
-        <button onClick={this.payButton}>
-          Pay 10 points to change from +{this.state.incrementor} to +
-          {this.state.incrementor + 1}
-        </button>
-      </>
-    );
+    if (this.state.count < 100) {
+      return (
+        <>
+          <h1>Current Score: {this.state.count}</h1>
+          <button onClick={this.increment}>+{this.state.incrementor}</button>
+          <button onClick={this.payButton}>
+            Pay 10 points to change from +{this.state.incrementor} to +
+            {this.state.incrementor + 1}
+          </button>
+        </>
+      );
+    } else {
+      return (
+        <div>
+          <h1>{this.state.count}!</h1>
+          <h2>You Win!</h2>
+          <button onClick={this.playAgainButton}>Play again?</button>
+        </div>
+      );
+    }
   }
 }
 
