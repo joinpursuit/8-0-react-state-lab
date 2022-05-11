@@ -32,7 +32,6 @@ class Counter extends Component {
       return (
         <>
           <h1>Current Score: {this.state.count}</h1>
-          {/* pass a prop called onClick to the button */}
           <button onClick={this.increment}>+{this.state.increase}</button>
           <button onClick={this.addToWin}>
             Pay 10 points to change from +{this.state.increase} to +{this.state.increase + 1}
