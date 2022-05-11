@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
+import Game from "./Game";
 
 class App extends React.Component {
   render() {
     return (
       <main>
-        <p>React State Lab</p>
+        <Game />
       </main>
     );
   }
