@@ -6,7 +6,9 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <p>React State Lab</p>
+        <div class="clicker">
+          <Clicker />
+        </div>
       </main>
     );
   }
