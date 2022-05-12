@@ -40,27 +40,39 @@ class Game extends React.Component {
 	render() {
 		const hasWin = this.state.score < 100;
 		// >> Validating if the winning score was reached out
-		if(hasWin) {
+		//if(hasWin) {
 			return (
 				<>
-					<h1 className="score" >Current Score: <b>{this.state.score}</b></h1>
-					<section className="game-controls" >
-						<span className="btn-wrap"><button onClick={this.increment} >+{this.state.credit}</button></span>
-						<button onClick={this.addCredit}>Pay 10 points to change from +{this.state.credit} to +{this.state.credit + 1}</button>    
-					</section>
+					{hasWin && (<h1 className="score" >Current Score: <b>{this.state.score}</b></h1>)}
+					{!hasWin && (<h1 className="score" ><b>{this.state.score}</b></h1>)}
+					{hasWin && (
+						<section className="game-controls" >
+							<span className="btn-wrap"><button onClick={this.increment} >+{this.state.credit}</button></span>
+							<button onClick={this.addCredit}>Pay 10 points to change from +{this.state.credit} to +{this.state.credit + 1}</button>    
+						</section>
+					)}
+					{!hasWin && (
+						<section className="game-result" >
+							<h2>You Win!</h2>
+							<button onClick={this.resetGame}>Play again?</button>    
+						</section>
+					)}
+
+					
+					
 				</>
 			);
-		}else{
-			return (
-				<>
-					<h1 className="score" ><b>{this.state.score}</b></h1>
-					<section className="game-result" >
-						<h2>You Win!</h2>
-						<button onClick={this.resetGame}>Play again?</button>    
-					</section>
-				</>
-			);	
-		}
+		// }else{
+		// 	return (
+		// 		<>
+		// 			<h1 className="score" ><b>{this.state.score}</b></h1>
+		// 			<section className="game-result" >
+		// 				<h2>You Win!</h2>
+		// 				<button onClick={this.resetGame}>Play again?</button>    
+		// 			</section>
+		// 		</>
+		// 	);	
+		// }
 	}
 }
 

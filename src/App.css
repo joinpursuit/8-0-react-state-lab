@@ -3,18 +3,23 @@ body {
   display: grid;grid-template-rows: 3;
 }
 main {
-  margin: 1rem auto;
-  width: 50%;
-  grid-row-start: 1 ;
+  width: 50%;margin: 1rem auto;
+  grid-row-start: 1;
   text-align: center;background-color: #fcbf49;border: 10rem solid #f77f00;border-radius: 5rem;
 }
 main div {padding: 1rem;}
-main .score {font-family: 'Rampart One', cursive;font-size: 4rem;letter-spacing: 4px;font-size: 3rem;color: #fb8500;}
-main .score b {display: block; font-size: 10rem;line-height: 11rem; color: #fb5607;}
+main .score {
+  font-family: 'Rampart One', cursive;font-size: 4rem;letter-spacing: 4px;font-size: 3rem;color: #fb8500;
+}
+main .score b {
+  display: block; font-size: 10rem;line-height: 11rem; color: #fb5607;
+}
 main .game-controls { 
   text-align: center;
 }
-main .game-controls .btn-wrap {padding: 0px 16px;margin: auto; display: table;border-radius: 70px;background-color: #ffd60a;}
+main .game-controls .btn-wrap {
+  padding: 0px 16px;margin: auto; display: table;border-radius: 70px;background-color: #ffd60a;
+}
 main .game-controls button:nth-child(1) {
   padding: 1.8rem 1.8rem;margin: 1rem auto; display: block;
   background-color: #dc2f02;font-size: 2rem;font-family: 'Merriweather Sans', sans-serif;font-weight: bold; color: #FFF;border: none;
@@ -24,9 +29,35 @@ main .game-controls button:nth-child(2) {
   padding: 1rem 2rem;margin: 2rem auto; background-color: #fee440;font-family: 'Merriweather Sans', sans-serif;font-size: 2rem;font-weight: bold; 
   color: #fb5607;border: none;border-radius: 3px;box-shadow: 0px 5px 1px 2px #fb5607;
 }
-main .game-result h2 {margin: 3rem auto;font-family: 'Rampart One', cursive;font-size: 6rem;line-height: 6rem; letter-spacing: 4px;color: #ffd60a;text-shadow: 5px 10px 20px #fb5607;}
+main .game-result h2 {
+  margin: 3rem auto;font-family: 'Rampart One', cursive;font-size: 6rem;line-height: 6rem; letter-spacing: 4px;color: #ffd60a;
+  animation: blur .80s ease-out infinite;text-shadow: 0px 0px 3px #fb5607, 0px 0px 5px #fb5607;
+}
 main .game-result button {
   padding: 1rem 2rem;margin: 2rem auto; font-family: 'Merriweather Sans', sans-serif;font-size: 2rem;font-weight: bold; 
   color: #FFFFFF;border: none;border-radius: 3px;background-color: #fb5607;box-shadow: 0px 5px 1px 2px #fee440;
 }
 main button:hover {cursor: pointer;}
+/* Setting the blur effect */
+@keyframes blur {
+  from {
+    text-shadow:0px 0px 10px #fb5607,
+      0px 0px 10px #fb5607, 
+      0px 0px 20px #fb5607,
+      0px 0px 20px #fb5607,
+      0px 0px 20px #fb5607,
+      0px 0px 20px #fb5607,
+      0px 0px 20px #fb5607,
+      0px 0px 20px #fb5607,
+      0px 0px 25px #fb5607,
+      0px 0px 25px #fb5607,
+      0px 0px 25px #d62828,
+      0px 0px 100px #d62828,
+      0px 10px 50px #d62828,
+      0px 10px 50px #d62828,
+      0px 10px 50px #d62828,
+      0px 10px 50px #d62828,
+      0px -10px 50px #d62828,
+      0px -10px 50px #d62828;
+  }
+}
