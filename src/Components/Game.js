@@ -10,12 +10,14 @@ class Game extends React.Component {
   }
     
 	increment = () => {
+		// >> Proccessing incremments tiggered by the action of incrementor button
 		this.setState({
 			score: this.state.score + this.state.credit,
 		})
 	};
 
 	addCredit = () => {
+		// >>
 		if(this.state.score < 10){
 			alert('You can\'t afford that!');
 		}else{
