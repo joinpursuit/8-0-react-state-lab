@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500;600;700;800;900&family=Merriweather+Sans:wght@700;800&family=Rampart+One&display=swap');
+
 body {
   display: grid;grid-template-rows: 3;
 }
@@ -7,7 +8,9 @@ main {
   grid-row-start: 1;
   text-align: center;background-color: #fcbf49;border: 10rem solid #f77f00;border-radius: 5rem;
 }
-main div {padding: 1rem;}
+main div {
+  padding: 1rem;
+}
 main .score {
   font-family: 'Rampart One', cursive;font-size: 4rem;letter-spacing: 4px;font-size: 3rem;color: #fb8500;
 }
@@ -38,7 +41,7 @@ main .game-result button {
   color: #FFFFFF;border: none;border-radius: 3px;background-color: #fb5607;box-shadow: 0px 5px 1px 2px #fee440;
 }
 main button:hover {cursor: pointer;}
-/* Setting the blur effect */
+/*** Setting blur effects ***/
 @keyframes blur {
   from {
     text-shadow:0px 0px 10px #fb5607,
