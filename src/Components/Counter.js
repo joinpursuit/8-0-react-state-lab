@@ -5,31 +5,43 @@ class Counter extends Component {
     super();
     this.state = {
       count: 0,
+      pointInvestments: 1,
     };
   }
 
-  increment = () => {
+  clickIncrement = () => {
     console.log('incrementing...');
-    this.setState({ count: this.state.count + 1 });
+    this.setState({ count: this.state.count + this.state.pointInvestments });
   };
 
-  plusincrement = () => {
+  investPoints = () => {
     console.log('investing points...');
+    if (this.state.count >= 10) {
+      this.setState({
+        count: this.state.count - 10,
+        pointInvestments: this.state.pointInvestments + 1,
+      });
+    } else if (this.state.count < 10) {
+      alert('Not enough points...');
+    }
   };
   render() {
-    return (
-      <div>
-        <h3> Current Score</h3>
-        <div>
-          <button onClick={this.increment}>+1</button>
-        </div>
-        <div>
-          <button onClick={this.increment + 1}>
-            Pay 10 points to change from +1 to +2
+    if (this.state.count <= 100) {
+      return (
+        <section>
+          <h3> Current Score {this.state.count}</h3>
+
+          <button onClick={this.clickIncrement}>
+            +{this.state.investPoints}
           </button>
-        </div>
-      </div>
-    );
+          <br></br>
+          <button onClick={this.investPoints}>
+            Pay 10 points to change from +{this.state.investPoints} to +
+            {this.state.investPoints + 1}
+          </button>
+        </section>
+      );
+    }
   }
 }
 export default Counter;
