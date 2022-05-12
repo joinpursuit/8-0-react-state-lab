@@ -17,10 +17,11 @@ class Game extends React.Component {
 	};
 
 	addCredit = () => {
-		// >>
+		// >> Validating if player has enought score to add credits
 		if(this.state.score < 10){
 			alert('You can\'t afford that!');
 		}else{
+			// >> Processing credits bought: deducting credit from score + increasing range in incrementor  
 			this.setState({
 				score: this.state.score - 10,
 				credit: this.state.credit + 1,
