@@ -46,17 +46,15 @@ class Game extends React.Component {
 			<>
 				{/* Ternary Display-Shortcut Display validations */}
 				{hasWin ? (<h1 className="score" >Current Score: <b>{this.state.score}</b></h1>) : (<h1 className="score" ><b>{this.state.score}</b></h1>)}
-				{hasWin && (
-					<section className="game-controls" >
-						<span className="btn-wrap"><button onClick={this.increment} >+{this.state.credit}</button></span>
-						<button onClick={this.addCredit}>Pay 10 points to change from +{this.state.credit} to +{this.state.credit + 1}</button>    
-					</section>
+				{hasWin && (<section className="game-controls" >
+											<span className="btn-wrap"><button onClick={this.increment} >+{this.state.credit}</button></span>
+											<button onClick={this.addCredit}>Pay 10 points to change from +{this.state.credit} to +{this.state.credit + 1}</button>    
+										</section>
 				)}
-				{!hasWin && (
-					<section className="game-result" >
-						<h2>You Win!</h2>
-						<button onClick={this.resetGame}>Play again?</button>    
-					</section>
+				{!hasWin && (<section className="game-result" >
+											<h2>You Win!</h2>
+											<button onClick={this.resetGame}>Play again?</button>    
+										</section>
 				)}
 			</>
 		);
