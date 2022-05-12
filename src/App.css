@@ -1,5 +1,36 @@
 /* Your code here! */
 main {
-  margin: 25px auto;
+  margin: 20px auto;
   width: 50%;
+  text-align: center;
+}
+
+button {
+  font-family: Arial;
+  border-radius: 5px;
+  font-size: large;
+}
+
+.incrementor {
+  margin: 20px 20px;
+  width: auto;
+  height: auto;
+}
+
+.incrementor:hover {
+  border: blue;
+  background-color: blue;
+  color: white;
+}
+
+.pay-ten {
+  margin: 20px 20px;
+  width: auto;
+  height: auto;
+}
+
+.pay-ten:hover {
+  border: red;
+  background-color: red;
+  color: white;
 }
