@@ -3,3 +3,34 @@ main {
   margin: 25px auto;
   width: 50%;
 }
+header {
+  font-size: 35px;
+  text-align: center;
+  color: red;
+  background-color: black;
+  box-shadow: 0 0 50px 25px #fff, 0 0 50px 50px #f0f, 0 0 50px 75px #0ff;
+  border-radius: 1em;
+  animation: headerAnimation 8s ease-out infinite;
+  text-shadow: 1.5px 1.5px 5px cyan;
+}
+/* prettier-ignore */
+@keyframes headerAnimation {
+  0% {
+    box-shadow:
+      50px 0 40px 25px #fff,
+      50px 0 40px 50px red,
+      0 0 35px 75px black;
+  }
+  50% {
+    box-shadow:
+      -60px 0 40px 25px #fff,
+      -60px 0 40px 50px red,
+      0 0 35px 75px black;
+  }
+  100% {
+    box-shadow:
+      50px 0 40px 25px #fff,
+      50px 0 40px 50px red,
+      0 0 35px 75px black;
+  }
+}
