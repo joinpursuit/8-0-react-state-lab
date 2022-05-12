@@ -28,7 +28,7 @@ class App extends React.Component {
     this.setState({banana: "off"})
   }
 
-  banana = () => {
+  goldBanana = () => {
     let bg = document.getElementById("banana");
     if (bg.style.display === "block" && this.state.score !== 100) {
       this.setState({
@@ -71,21 +71,34 @@ class App extends React.Component {
   };
 
   render() {
-    const bananaBG = {backgroundImage: this.state.banana};
+    // const bananaBG = `${this.goldBanana}`;
     const { score, clicky } = this.state
     const play = score < 100 ? <>
       <p>Current Score: {score}</p>
       <button class="banana1" onClick={this.onClicky}>+{clicky}</button>
       <button class="banana2" onClick={score < 10 ? this.prompt: 
         this.currentScore}>Pay 10 points to change from +{clicky} to +{clicky + 1}</button></> : <> 
-        
+        <div
+            id="banana"
+            style={{
+              display: "block",
+              backgroundImage: `url(${banana})}`, 
+              width:"100%",
+            }}
+          ></div>
         <p>You Win!</p>
-       
         <br />
         <button onClick={this.replay}>Play again?</button></>
     return (
       <main>
-        <div id="banana" style={{bananaBG}}  />
+        <div
+            id="banana"
+            style={{
+              display: "block",
+              backgroundImage: `url(${banana})}`, 
+              width:"100%",
+            }}
+          ></div>
         {play}
       </main>
     );
