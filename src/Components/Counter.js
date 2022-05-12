@@ -25,6 +25,10 @@ class Counter extends Component {
       alert("You can't afford that!");
     }
   };
+
+  reset = () => {
+    this.setState({ count: 0, pointInvestments: 1 });
+  };
   render() {
     if (this.state.count <= 100) {
       return (
@@ -39,6 +43,15 @@ class Counter extends Component {
             Pay 10 points to change from +{this.state.pointInvestments} to +
             {this.state.pointInvestments + 1}
           </button>
+          <button onClick={this.reset}> Reset? </button>
+        </section>
+      );
+    } else if (this.state.count >= 100) {
+      return (
+        <section>
+          <h2>Final Score: {this.state.count}</h2>
+          <h2>You Win!</h2>
+          <button onClick={this.reset}>Play again?</button>
         </section>
       );
     }
