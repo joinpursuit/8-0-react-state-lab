@@ -1,5 +1,13 @@
-/* Your code here! */
 main {
   margin: 25px auto;
   width: 50%;
+}
+
+.clicker {
+  text-align: center;
+  text-emphasis-style: bold;
+}
+
+.button {
+  display: inline-block;
 }
