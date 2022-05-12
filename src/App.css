@@ -1,13 +1,37 @@
 /* Your code here! */
-main {
-  margin: 25px auto;
-  width: 50%;
-}
 
 h1 {
+  display:grid;
   text-align: center;
-  color: purple;
+  color: rgb(159, 32, 159);
   font-family: Cambria;
-  
+  background-color: rgb(199, 179, 199);
  
+}
+.addScore {
+  font-family: Cambria;
+  color:purple;
+  width: 25%;
+  background-color:  rgb(199, 179, 199);
+}
+
+.payUpFool {
+  font-family: Cambria;
+  color: purple;
+  width: 25%;
+  background-color: rgb(199, 179, 199);
+}
+
+.youWin {
+  font-family: Cambria;
+  color:purple;
+
+
+}
+
+.playAgain {
+  font-family: Cambria;
+  color: purple;
+  width: 25%;
+  background-color: rgb(199, 179, 199);
 }

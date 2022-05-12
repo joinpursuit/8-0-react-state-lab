@@ -34,22 +34,25 @@ class App extends React.Component {
 		});
 	};
 	render() {
-		const { score, plusX } = this.state;
 		if (this.state.score < 100) {
 			return (
 				<>
 					<div>
-						<h1>Current Score: {this.state.score}</h1>
+						<h1>
+							<em>Current Score:</em> {this.state.score}
+						</h1>
 					</div>
 
 					<div>
-						<button onClick={this.addScore}>+{this.state.plusX}</button>
+						<button className='addScore' onClick={this.addScore}>
+							+{this.state.plusX}
+						</button>
 					</div>
-
+					<br></br>
 					<div>
-						<button onClick={this.payUpFoolButton}>
-							Pay 10 points to change from + {this.state.plusX} to +
-							{this.state.plusX + 1}
+						<button className='payUpFool' onClick={this.payUpFoolButton}>
+							<em> Pay 10 points to change from </em>+{this.state.plusX}
+							<em> to </em>+{this.state.plusX + 1}
 						</button>
 					</div>
 				</>
@@ -58,8 +61,12 @@ class App extends React.Component {
 			return (
 				<div>
 					<h1>{this.state.score}!</h1>
-					<h2>You Win!</h2>
-					<button onClick={this.playAgain}>Play again?</button>
+					<h2 className='youWin'>
+						<em>You Win!</em>
+					</h2>
+					<button className='playAgain' onClick={this.playAgain}>
+						<em>Play again?</em>
+					</button>
 				</div>
 			);
 		}
