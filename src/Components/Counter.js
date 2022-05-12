@@ -22,22 +22,22 @@ class Counter extends Component {
         pointInvestments: this.state.pointInvestments + 1,
       });
     } else if (this.state.count < 10) {
-      alert('Not enough points...');
+      alert("You can't afford that!");
     }
   };
   render() {
     if (this.state.count <= 100) {
       return (
         <section>
-          <h3> Current Score {this.state.count}</h3>
+          <h3> Current Score: {this.state.count}</h3>
 
           <button onClick={this.clickIncrement}>
-            +{this.state.investPoints}
+            +{this.state.pointInvestments}
           </button>
           <br></br>
           <button onClick={this.investPoints}>
-            Pay 10 points to change from +{this.state.investPoints} to +
-            {this.state.investPoints + 1}
+            Pay 10 points to change from +{this.state.pointInvestments} to +
+            {this.state.pointInvestments + 1}
           </button>
         </section>
       );
