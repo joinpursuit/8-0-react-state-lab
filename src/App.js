@@ -1,4 +1,4 @@
-import React, { useState }from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 const App = () => {
@@ -13,14 +13,14 @@ const App = () => {
     if (count < 10) {
       alert("You can't afford that!");
     } else {
-      setCount(count - 10)
-      setIncrement(increment + 1)
+      setCount(count - 10);
+      setIncrement(increment + 1);
     }
   };
 
   const playAgain = () => {
-    setCount(0)
-    setIncrement(1)
+    setCount(0);
+    setIncrement(1);
   };
 
   if (count < 100) {
