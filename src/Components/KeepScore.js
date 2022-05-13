@@ -7,6 +7,7 @@ class KeepScore extends Component {
     this.state = {
       score: 0,
       plusX: 1,
+      wonGame: "",
     };
   }
 
@@ -18,11 +19,9 @@ class KeepScore extends Component {
         score: this.state.score + this.state.plusX,
       });
     } else {
-      const pay10Points = document.querySelector(".pay10Points");
-      const addToScoreButton = document.querySelector(".addToScoreButton");
-
-      addToScoreButton.classList.add("wonGame");
-      pay10Points.classList.add("wonGame");
+      this.setState({
+        wonGame: "wonGame",
+      });
     }
   };
 
@@ -47,17 +46,17 @@ class KeepScore extends Component {
   };
 
   render() {
-    const { score, plusX } = this.state;
+    const { score, plusX, wonGame } = this.state;
 
     if (score < 100) {
       return (
         <section className="currentScore-section">
           <header>Clicker Game</header>
           <h2>Current Score: {score}</h2>
-          <button className="addToScoreButton" onClick={this.addToScore}>
+          <button className={wonGame} onClick={this.addToScore}>
             +{plusX}
           </button>
-          <button onClick={this.pay10Points} className="pay10Points">
+          <button onClick={this.pay10Points} className={wonGame}>
             Pay 10 points to change from +{plusX} to +{plusX + 1}
           </button>
         </section>
