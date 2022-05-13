@@ -1,54 +1,40 @@
-import React from "react";
-import "./App.css"
+// import React from "react";
+import React, { useState } from "react";
+import "./App.css";
 
-class App extends React.Component {
-  constructor() {
-    super();
+const App = () => {
+  const [count, setCount] = useState(0);
+  const [increment, setIncrement] = useState(1);
 
-    this.state = {
-      points: 0,
-      incrementor: 1,
-    };
-  }
-
-  addPoints = () => {
-    this.setState({
-      points: this.state.points + this.state.incrementor,
-    });
+  const incrementCount = () => {
+    setCount(count + increment);
   };
 
-  payButton = () => {
-    if (this.state.points >= 10) {
-      this.setState({
-        points: this.state.points - 10,
-        incrementor: this.state.incrementor + 1,
-      });
-    } else {
+  const payButton = () => {
+    if (count < 10) {
       alert("You can't afford that!");
+    } else {
+      setCount(count - 10);
+      setIncrement(count + 1);
     }
-  };
 
-  playAgain = () => {
-    this.setState({
-      points: 0,
-      incrementor: 1,
-    });
-  };
+    const playAgain = () => {
+      setCount(0);
+      setIncrement(1);
+    };
 
-  render() {
-    const { points, incrementor } = this.state;
-    if (this.state.points < 100) {
+    if (count < 100) {
       return (
         <>
           <div>
-            <h1>Current Score: {this.state.points}</h1>
+            <h2>Current Score: {count}</h2>
           </div>
           <div>
-            <button onClick={this.addPoints}>+{this.state.incrementor}</button>
+            <button onClick={incrementCount}>+{increment}</button>
           </div>
           <div>
-            <button onClick={this.payButton}>
-              Pay 10 points to change from +{this.state.incrementor} to +{this.state.incrementor + 1}
+            <button onClick={payButton}>
+              Pay 10 points to change from +{increment} to +{increment + 1}
             </button>
           </div>
         </>
@@ -56,13 +42,13 @@ class App extends React.Component {
     } else {
       return (
         <div>
-            <h1>{this.state.points}!</h1>
-            <h2>You Win!</h2>
-            <button onClick={this.playAgain}>Play again?</button>
+          <h2>{count}!</h2>
+          <h3>You Win!</h3>
+          <button onClick={playAgain}>Play again?</button>
         </div>
       );
     }
-  }
-}
+  };
+};
 
 export default App;
