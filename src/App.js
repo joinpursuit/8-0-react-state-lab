@@ -1,4 +1,6 @@
 import React from "react";
+import Reset from "./Reset";
+import Game from "./Game";
 import "./App.css";
 
 class App extends React.Component {
@@ -37,22 +39,17 @@ class App extends React.Component {
   };
 
   render() {
-    const { scoreCount, plusCount } = this.state;
     return (
       <main>
-        {scoreCount < 100 ? (
-          <div>
-            <h1> Current Score: {scoreCount}</h1>
-            <button onClick={this.incrementScore}>+{plusCount}</button>
-            <button onClick={this.payButton}>
-              Pay 10 points to change from +{plusCount} to +{plusCount + 1}
-            </button>
-          </div>
+        {this.state.scoreCount < 100 ? (
+          <Game
+            scoreCount={this.state.scoreCount}
+            incrementScore={this.incrementScore}
+            plusCount={this.state.plusCount}
+            payButton={this.payButton}
+          />
         ) : (
-          <div>
-            <h2>You Win!</h2>
-            <button onClick={this.resetGame}>Play again?</button>
-          </div>
+          <Reset resetGame={this.resetGame} />
         )}
       </main>
     );
