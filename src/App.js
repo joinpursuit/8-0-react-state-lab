@@ -29,28 +29,33 @@ class App extends React.Component {
     }
   };
 
+  resetGame = () => {
+    this.setState({
+      plusCount: 1,
+      scoreCount: 0,
+    });
+  };
+
   render() {
     const { scoreCount, plusCount } = this.state;
-    if (scoreCount < 100) {
-      return (
-        <div>
-          <h1> Current Score: {scoreCount}</h1>
-          <button onClick={this.incrementScore}>+{plusCount}</button>
-          <button onClick={this.payButton}>
-            Pay 10 points to change from +{plusCount} to +{plusCount + 1}
-          </button>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <h2>You Win!</h2>
-          <button onClick={() => window.location.reload(false)}>
-            Play again?
-          </button>
-        </div>
-      );
-    }
+    return (
+      <main>
+        {scoreCount < 100 ? (
+          <div>
+            <h1> Current Score: {scoreCount}</h1>
+            <button onClick={this.incrementScore}>+{plusCount}</button>
+            <button onClick={this.payButton}>
+              Pay 10 points to change from +{plusCount} to +{plusCount + 1}
+            </button>
+          </div>
+        ) : (
+          <div>
+            <h2>You Win!</h2>
+            <button onClick={this.resetGame}>Play again?</button>
+          </div>
+        )}
+      </main>
+    );
   }
 }
 
