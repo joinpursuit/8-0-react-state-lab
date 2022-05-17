@@ -29,7 +29,14 @@ class ClickerGame extends react.Component {
   render() {
     const { increment, score } = this.state;
 
-    return (
+    return score >= 100 ? (
+      <div>
+        <h2>You Win!</h2>
+        <form>
+          <button>Play again?</button>
+        </form>
+      </div>
+    ) : (
       <div>
         <h1>Current Score: {score}</h1>
         <button onClick={() => this.handleClick1()}>+{increment}</button>
