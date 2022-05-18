@@ -1,11 +1,13 @@
-import React from "react";
+import { Component } from "react";
 import "./App.css";
 
-class App extends React.Component {
+import KeepScore from "./Components/KeepScore";
+
+class App extends Component {
   render() {
     return (
       <main>
-        <p>React State Lab</p>
+        <KeepScore />
       </main>
     );
   }
