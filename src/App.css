@@ -1,10 +1,15 @@
 /* Your code here! */
-main {
+div {
   display: grid;
   justify-content: center;
 }
 
-button {
+button,
+h2 {
   width: auto;
   justify-self: center;
+}
+
+.hidden {
+  display: none;
 }
