@@ -12,24 +12,34 @@ function App() {
   const [adderBtn, setAdderBtn] = useState(1);
 
   //Boolean used for levelUp functionality
-  const [gameOverBool, setGameOverBool] = useState(false);
+  let [gameOverBool, setGameOverBool] = useState(false);
 
   //********* HELPER FUNCTIONS ********
+
+  // checks status of score (if 100 pts game over)
+  const checkScore = () => {
+    if (score === 100 || score > 100) {
+      setGameOverBool((gameOverBool = true));
+      alert("you win!");
+    }
+  };
 
   // fires when adder button is clicked
   const addToScore = () => {
     setScore(score + adderBtn);
+    checkScore();
   };
 
   const subtract10FromScore = () => {
     setScore(score - 10);
   };
 
-  // fires when levelUp button is clicked && score is at least 10
+  // fires within levelUpClickEvent
   const addToAdderButton = () => {
     setAdderBtn(adderBtn + 1);
   };
 
+  // fires when levelUp button is clicked && score is at least 10
   const levelUpClickEvent = () => {
     if (score >= 10) {
       addToAdderButton();
@@ -38,10 +48,6 @@ function App() {
       alert("You can't afford this!");
     }
   };
-
-  if (score === 100) {
-    setGameOverBool = true;
-  }
 
   //******* RETURN ********
 
