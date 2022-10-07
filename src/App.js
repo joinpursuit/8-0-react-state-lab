@@ -12,7 +12,7 @@ function App() {
   const [adderBtn, setAdderBtn] = useState(1);
 
   //Boolean used for levelUp functionality
-  const [levelUpBool, setLevelUpBool] = useState(false);
+  const [gameOverBool, setGameOverBool] = useState(false);
 
   //********* HELPER FUNCTIONS ********
 
@@ -34,11 +34,14 @@ function App() {
     if (score >= 10) {
       addToAdderButton();
       subtract10FromScore();
-      console.log("i am firing");
     } else {
       alert("You can't afford this!");
     }
   };
+
+  if (score === 100) {
+    setGameOverBool = true;
+  }
 
   //******* RETURN ********
 
