@@ -1,5 +1,10 @@
 /* Your code here! */
 main {
-  margin: 25px auto;
-  width: 50%;
+  display: grid;
+  justify-content: center;
+}
+
+button {
+  width: auto;
+  justify-self: center;
 }
