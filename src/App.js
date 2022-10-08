@@ -6,9 +6,8 @@ import { useState } from "react";
 function App() {
   //* State initialized to 0.
   const [counter, setCounter] = useState(0);
+  //* Initialized incrementor to 1
   let [count, setCount] = useState(+1);
-  const final = [counter, count];
-  console.log(final);
   //* Decrementor ->10 for upgrading points / Alert message
   const decrementor = () => {
     //* Incrementer for counter
@@ -26,8 +25,8 @@ function App() {
   }
   //* Play Again btn
   const PlayAgain = () => {
-    // window.location.reload();
     setCounter(0);
+    setCount(1);
   };
   // const play document.querySelector
   //* End Game Victory Screen
