@@ -65,7 +65,7 @@ function App() {
         <h1>Current Score: {score}</h1>
         <button onClick={addToScore}>+{adderBtn}</button>
         <button onClick={levelUpClickEvent}>
-          Pay 10 points to change from {adderBtn} to {adderBtn + 1}
+          Pay 10 points to change from +{adderBtn} to +{adderBtn + 1}
         </button>
       </div>
       <div className={!gameOverBool ? "hidden" : "display"}>
