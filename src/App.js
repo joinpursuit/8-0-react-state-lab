@@ -18,16 +18,18 @@ function App() {
 
   // checks status of score (if 100 pts game over)
   const checkScore = () => {
-    if (score === 100 || score > 100) {
+    if (score + adderBtn > 99) {
       setGameOverBool((gameOverBool = true));
-      alert("you win!");
     }
   };
 
   // fires when adder button is clicked
   const addToScore = () => {
+    // checkScore();
     setScore(score + adderBtn);
-    checkScore();
+    setTimeout(() => {
+      checkScore();
+    }, 1000);
   };
 
   const subtract10FromScore = () => {
@@ -45,19 +47,31 @@ function App() {
       addToAdderButton();
       subtract10FromScore();
     } else {
-      alert("You can't afford this!");
+      alert("You can't afford that!");
     }
+  };
+
+  const gameReset = () => {
+    setScore(0);
+    setAdderBtn(1);
+    setGameOverBool(false);
   };
 
   //******* RETURN ********
 
   return (
     <div>
-      <h1>{score}</h1>
-      <button onClick={addToScore}>+1</button>
-      <button onClick={levelUpClickEvent}>
-        Pay 10 points to change from {adderBtn} to {adderBtn + 1}{" "}
-      </button>
+      <div className={gameOverBool ? "hidden" : "display"}>
+        <h1>Current Score: {score}</h1>
+        <button onClick={addToScore}>+{adderBtn}</button>
+        <button onClick={levelUpClickEvent}>
+          Pay 10 points to change from {adderBtn} to {adderBtn + 1}
+        </button>
+      </div>
+      <div className={!gameOverBool ? "hidden" : "display"}>
+        <h2>You Win!</h2>
+        <button onClick={gameReset}>Play again?</button>
+      </div>
     </div>
   );
 }
