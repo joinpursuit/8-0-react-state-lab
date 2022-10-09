@@ -1,5 +1,5 @@
 /* Your code here! */
-div {
+main {
   display: grid;
   justify-content: center;
 }
@@ -8,8 +8,4 @@ button,
 h2 {
   width: auto;
   justify-self: center;
-}
-
-.hidden {
-  display: none;
 }

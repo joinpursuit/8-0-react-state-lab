@@ -5,17 +5,20 @@ import "./App.css";
 function App() {
   const [points, setPoints] = useState(0);
   const [incrementor, setIncrementor] = useState(1);
-  const [visibility, setVisibility] = useState(`hidden`);
+  const [visibility, setVisibility] = useState(false);
 
   const changeVisibility = () => {
-    setVisibility(`notHidden`);
+    setVisibility(true);
   };
 
   const increasePoints = () => {
     const newValue = points + incrementor;
     setPoints(newValue);
     if (newValue > 99) {
-      changeVisibility();
+      // setTimeout(() => {
+      //   changeVisibility();
+      // }, 500);
+      changeVisibility()
     }
   };
 
@@ -31,23 +34,27 @@ function App() {
   const resetGame = () => {
     setPoints(0);
     setIncrementor(1);
-    setVisibility(`hidden`);
+    setVisibility(false);
   };
 
   return (
     <main>
-      <div className={visibility === `hidden` ? `notHidden` : `hidden`}>
-        <h1>Current Score: {points}</h1>
-        <button onClick={increasePoints}>+{incrementor}</button>
-        <br />
-        <button onClick={updateIncrementor}>
-          Pay 10 points to change from +{incrementor} to +{incrementor + 1}
-        </button>
-      </div>
-      <div className={visibility}>
-        <h2>You Win!</h2>
-        <button onClick={resetGame}>Play again?</button>
-      </div>
+      {!visibility && (
+        <>
+          <h1>Current Score: {points}</h1>
+          <button onClick={increasePoints}>+{incrementor}</button>
+          <br />
+          <button onClick={updateIncrementor}>
+            Pay 10 points to change from +{incrementor} to +{incrementor + 1}
+          </button>
+        </>
+      )}
+      {visibility && (
+        <>
+          <h2>You Win!</h2>
+          <button onClick={resetGame}>Play again?</button>
+        </>
+      )}
     </main>
   );
 }
