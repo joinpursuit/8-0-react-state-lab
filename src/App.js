@@ -44,7 +44,7 @@ function App () {
       return(
         <main>
           <h2>You Win!</h2>
-          <button onClick={resetGame}>Play Again?</button>
+          <button onClick={resetGame}>Play again?</button>
         </main>
       )
     }
