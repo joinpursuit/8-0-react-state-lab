@@ -3,6 +3,7 @@ import { useState } from "react";
 
 
 function DefaultGame() {
+  // Declare states
   const [score, setScore] = useState(0)
   const [plusOneButton, setPlusOneButton] = useState(1)
  
