@@ -1,10 +1,39 @@
 import React from "react";
 import "./App.css";
+import { useState } from 'react'
+//For the record using class would have been faster...
 
 function App () {
+  const [currentScore, setScore] = useState(0)
+  const [incrementor, setIncrementor] = useState(1)
+
+  const handleIncreaseIncrementor = () => {
+    if(currentScore > 9){
+      setIncrementor(incrementor + 1)
+      setScore(currentScore - 10)
+    }else{
+      alert(`You can't afford that!`)
+    }
+  }
+
+  const handleIncreaseScore = () => {
+    setScore(currentScore + incrementor)
+  }
+
+  const resetGame = () => {
+    setScore(0)
+    setIncrementor(1)
+  }
+
+  
     return (
       <main>
-        <p>React State Lab</p>
+        <h2>Current Score: {currentScore}</h2>
+        <button style={currentScore >= 100 ? {display: "none"} : null} onClick={handleIncreaseScore}>+{incrementor}</button>
+        <br /><br />
+        <button style={currentScore >= 100 ? {display: "none"} : null} onClick={handleIncreaseIncrementor}>Pay 10 points to change from +{incrementor} to +{incrementor + 1}</button>
+        <h2 style={currentScore <= 99 ? {display: "none"} : null}>You Win!</h2>
+        <button style={currentScore <= 99 ? {display: "none"} : null} onClick={resetGame}>Play Again?</button>
       </main>
     );
 }
