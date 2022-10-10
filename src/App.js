@@ -6,13 +6,14 @@ import {useState} from 'react'
 function App () {
 let [counter , setCounter] = useState(0)
 
+
 let [decrease] = useState(10)
 
-let [increase , setIncrease] = useState(1)
+let [increase , setIncrease] = useState(+1)
+
 
 const counterIncrease = () => {
-  setCounter(counter + 1)
-  
+  setCounter(counter += increase)
   if(counter >= 100){
     document.querySelector(".victory").classList.remove("hidden")
     document.querySelector(".increase").classList.add("hidden")
@@ -24,7 +25,8 @@ const countDecrease = () => {
 if(counter >= 10){
     setCounter(counter - decrease)
     setIncrease(increase + 1)
-  }
+    
+    }
   
   else {
     alert(`You can't afford that!`)
