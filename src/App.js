@@ -25,7 +25,7 @@ function App() {
 
   if (counter >= 100) {
     return (
-      <div>
+      <div className="winner">
         <h2>You Win!</h2>
         <button onClick={playAgain}>Play again?</button>
       </div>
