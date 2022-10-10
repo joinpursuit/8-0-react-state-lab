@@ -2,7 +2,7 @@
 main {
   margin: 25px auto;
   width: 50%;
-  display: flex;
+  display: flex; /*in this case, flex was easier to implement than grid*/
   flex-direction: column;
   justify-content: center;
   text-align: center;
@@ -12,5 +12,5 @@ button{
   border: 2px dotted skyblue;
   width: fit-content;
   text-align: center;
-  margin: auto;
+  margin: auto;      /*causes left and right margins to distribute evenly, centering element horizontally */
 }
