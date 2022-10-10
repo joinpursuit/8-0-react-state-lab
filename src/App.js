@@ -9,7 +9,7 @@ let [counter , setCounter] = useState(0)
 
 let [decrease] = useState(10)
 
-let [increase , setIncrease] = useState(+1)
+let [increase , setIncrease] = useState(1)
 
 
 const counterIncrease = () => {
@@ -44,9 +44,11 @@ const initialSate = () => {
 
     return (
       <main>
+      <div>
         <p className="score">
         Current Score: {counter}
         </p>
+      </div>
         <h2 className=" victory hidden">You Win!</h2>
         <button className="increase" onClick={counterIncrease}>+{increase}</button>
         <br></br>
