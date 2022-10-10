@@ -37,15 +37,15 @@ if(score >= 100){
   return(
     <>
       <h1>You Win!</h1>
-      <h2>Score: {score}</h2>
+      <h2>Score: <span>{score}</span> </h2>
       <button onClick={()=>{newGame()}}>Play again?</button>
     </>
   )
 }
 
-  return (
+return (
     <>
-      <h1>Current Score: {score}</h1>
+      <h1>Current Score: <span>{score}</span> </h1>
       
       <button onClick={() => {addButtonValue()}}>+{plusOneButton}</button>
 

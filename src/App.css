@@ -2,5 +2,22 @@
 main {
   margin: 25px auto;
   width: 50%;
+  display:grid;
+  grid-template-rows: max-content;
+  justify-items: center;
+  row-gap: 10%;
+}
+button {
+  width: max-content;
+}
+
+button:hover {
+  border: 3px solid orangered;
+}
+
+span {
+  color: orangered;
+  font-family: monospace;
+  font-size: 40px;
 }
 
