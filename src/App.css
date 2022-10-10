@@ -1,5 +1,44 @@
 /* Your code here! */
+body {
+  background: #350048;
+  color: #ffffff;
+  z-index: 1;
+}
+
 main {
   margin: 25px auto;
   width: 50%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 2rem;
+  z-index: 10;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+main:hover {
+  background: linear-gradient(rgba(255, 105, 180, 0.5), transparent);
+}
+
+button {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.5s;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
