@@ -17,8 +17,13 @@ function App () {
     }
   }
 
+
   const handleIncreaseScore = () => {
-    setScore(currentScore + incrementor)
+    let count = currentScore + incrementor
+    setScore(count)
+    if (count > 99){
+      setVisible(true)
+    }
   }
 
   const resetGame = () => {
@@ -26,16 +31,19 @@ function App () {
     setIncrementor(1)
     setVisible(false)
   }
-
-  
+  //Set office hour to compare returns
     return (
       <main>
+        {!visible &&(
+          <>
         <h2>Current Score: {currentScore}</h2>
-        <button style={currentScore >= 100 ? {visible} : null} onClick={handleIncreaseScore}>+{incrementor}</button>
-        <br /><br />
-        <button style={currentScore >= 100 ? {visible} : null} onClick={handleIncreaseIncrementor}>Pay 10 points to change from +{incrementor} to +{incrementor + 1}</button>
-        <h2 style={currentScore <= 99 ? {visible} : null}>You Win!</h2>
-        <button style={currentScore <= 99 ? {visible} : null} onClick={resetGame} type = "submit">Play again?</button>
+        <button onClick={handleIncreaseScore}>+{incrementor}</button>
+        <br/>
+        <button onClick={handleIncreaseIncrementor}>Pay 10 points to change from +{incrementor} to +{incrementor + 1}</button>
+        </>
+        )}
+        <h2>You Win!</h2>
+        <button onClick={resetGame} type = "submit">Play again?</button>
       </main>
     );
 }
