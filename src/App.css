@@ -1,5 +1,59 @@
 /* Your code here! */
-main {
+*{
+  
+  background-image: url(https://images.unsplash.com/photo-1532465008-140f15ee77ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGFxdWF8ZW58MHx8MHx8&auto=format&fit=crop&w=1400&q=60);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main{
+ display: grid;
+ grid-template-rows: repeat(3, 2fr) ;
+ color: brown;
+}
+
+div {
+  display: grid;
   margin: 25px auto;
   width: 50%;
+  grid-row: 3 / 4;
+}
+h1{
+  text-align: center;
+}
+
+button{
+  background-image: url(https://images.unsplash.com/photo-1610917615921-9b800769efe6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YXF1YXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1400&q=60);
+  color: brown;
+}
+
+.restart {
+  animation-name: my-animation;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  
+  /* other properties */
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  margin-left: auto;
+  margin-right: auto; 
+
+}
+
+@keyframes my-animation {
+  from {
+    background-color: #ff7a59;
+    width: 300px;
+    top: 10px;
+  }
+  to {
+    background-color: #33475b;
+    width: 50px;
+    top: 100px;
+  }
 }
