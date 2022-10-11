@@ -4,7 +4,7 @@ import "./App.css";
 
 function App () {
     let [score, setScore] = useState(0)
-    let [counter, setCounter]=useState(+1)
+    let [counter, setCounter]=useState(1)
 
     const scoreBoard=()=>{
       setScore(score += counter)
