@@ -5,7 +5,6 @@ import { useState } from "react";
 function App() {
   let [counter, setCounter] = useState(1);
   let [score, setScore] = useState(0);
-  let [appear, setAppearance] = useState("none");
 
   let changeCounter = () => {
     if (score < 10) {
