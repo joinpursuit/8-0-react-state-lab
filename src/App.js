@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import { useState } from "react";
-import Won from "./helper/Won";
 
 function App() {
   let [counter, setCounter] = useState(1);
@@ -21,7 +20,20 @@ function App() {
     setScore((score += counter));
   };
   if (score >= 100) {
-    return <Won />;
+    const refresh = () => {
+      setScore(0);
+      setCounter(1);
+    };
+    return (
+      <main>
+        <div>
+          <h2>You Win!</h2>
+          <button type="submit" onClick={refresh}>
+            Play again?
+          </button>
+        </div>
+      </main>
+    );
   } else {
     return (
       <main>

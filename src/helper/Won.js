@@ -6,12 +6,14 @@ const Won = () => {
   };
 
   return (
-    <div>
-      <h2>You Win!</h2>
-      <button type="submit" onClick={refresh}>
-        Play again?
-      </button>
-    </div>
+    <main>
+      <div>
+        <h2>You Win!</h2>
+        <button type="submit" onClick={refresh}>
+          Play again?
+        </button>
+      </div>
+    </main>
   );
 };
 

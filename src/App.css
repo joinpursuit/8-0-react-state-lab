@@ -2,16 +2,14 @@
 main {
   margin: 25px auto;
   width: 50%;
-  background-color: bisque;
+  background-color: rgb(249, 232, 211);
 }
 
-h1 {
-  display: flex;
-  align-items: center;
+main h1 {
+  text-align: center;
 }
 
 .holdsButtons {
   display: flex;
-
-  justify-content: space-between;
+  justify-content: center;
 }
