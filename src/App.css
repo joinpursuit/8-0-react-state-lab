@@ -1,5 +1,25 @@
 /* Your code here! */
+* {
+  text-align: center;
+  font-family: fantasy;
+  font-weight: bolder;
+  color: rgb(17, 96, 186);
+}
+
+body {
+  background-color: rgb(62, 225, 225);
+}
+
 main {
-  margin: 25px auto;
+  margin: 200px auto;
+  padding: 100px;
   width: 50%;
+  background-image: linear-gradient(
+    white,
+    rgb(60, 215, 239),
+    rgba(38, 36, 36, 0.639)
+  );
+  border-radius: 50px;
+  border-style: dashed;
+  border-width: 4px;
 }
