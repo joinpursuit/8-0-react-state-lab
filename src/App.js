@@ -1,12 +1,8 @@
 import React from "react";
 import "./App.css";
-
+import Post from "./Post";
 function App () {
-    return (
-      <main>
-        <p>React State Lab</p>
-      </main>
-    );
+    return <Post />;
 }
 
 export default App;
