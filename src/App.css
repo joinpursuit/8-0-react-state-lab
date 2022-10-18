@@ -3,3 +3,15 @@ main {
   margin: 25px auto;
   width: 50%;
 }
+
+h2 {
+  margin: 0
+}
+
+.playing {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
