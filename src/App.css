@@ -3,3 +3,40 @@ main {
   margin: 25px auto;
   width: 50%;
 }
+
+.clicker {
+  display: grid;
+  grid-template-rows: 2;
+}
+
+.score {
+  grid-row: 1 / 2;
+  width: auto;
+  margin: auto;
+}
+
+.increments {
+  grid-row: 2 / 3;
+  width: auto;
+  margin: auto;
+  position: relative;
+}
+
+.increments button {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.win-screen {
+  grid-row: 2 / 3;
+  width: auto;
+  margin: auto;
+  position: relative;
+}
+
+.win-screen * {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
