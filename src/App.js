@@ -5,16 +5,7 @@ import { useState } from "react";
 function App () {
 const [score,setScore]=useState(0)
 const [increment,setIncrement]=useState(1)
-const [win,setWin]=useState("")
-const [display,setDisplay]=useState("")
-if (score>100){
-  setScore(score)
-  
-  
-}
-if (score<0){
-  setScore(0)
-}
+
 function updateIncrements(){
   if (score<10){
     alert("You can't afford that!")
@@ -46,11 +37,7 @@ function updateIncrements(){
         </>
         
         }
-        {/* <h1>Current Score: {score}</h1>
-       
-        <button onClick={()=>setScore(score+ increment)}>+{increment}</button>
-        <button onClick={updateIncrements} >Pay 10 points to change from +{increment} to +{increment+1}</button>
-        <div>{display}</div> */}
+     
       </main>
     );
 }
