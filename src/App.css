@@ -2,4 +2,20 @@
 main {
   margin: 25px auto;
   width: 50%;
+  display: grid;
+  justify-content: center;
 }
+
+h1{
+    color: rgb(246, 142, 142);
+    font-size: 40px;
+
+}
+
+button{
+  background-color: rgb(244,129,90);
+  font-size: 20px;
+  text-align: center;
+}
+
+
