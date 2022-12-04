@@ -21,6 +21,7 @@ function CurrentScore({count, setCount, multiplier, setMultiplier}) {
     <div>
 
       <div><h1>Current Score: {count}</h1></div>
+      
       <div><button onClick={incrementCount}>+{multiplier}</button></div> 
 
       <div><button onClick={payPoints}>Pay 10 points to change from +{multiplier} to +{multiplier +1}</button></div>
